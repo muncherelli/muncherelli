@@ -1,3 +1,0 @@
-{{ $matomo := resources.Get "js/matomo.js" }}
-{{ $js := slice $matomo | resources.Concat "js/bundle.js" | minify | resources.Fingerprint "sha512" }}
-<script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
